@@ -13,5 +13,10 @@ function extractFruit(e) {
 function addFruit(fruit) {
     const li = document.createElement("li")
     li.textContent = fruit
+    li.addEventListener("click", removeFruit, {once:true})
     fruitList.appendChild(li)
+}
+
+function removeFruit(e) {
+    e.target.remove()
 }
